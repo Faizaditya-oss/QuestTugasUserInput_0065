@@ -416,4 +416,80 @@ fun BiodataScreen() {
                             dimensionResource(R.dimen.space_medium)
                         )
                     )
+                    // Pilihan skill
+                    Text(
+                        text = stringResource(R.string.skills_title),
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        color = colorResourceCompat(R.color.text_primary),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_small)
+                        )
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        skills.forEach { skill ->
+
+                            Row(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clickable {
+                                        selectedSkills =
+                                            if (skill in selectedSkills) {
+                                                selectedSkills - skill
+                                            } else {
+                                                selectedSkills + skill
+                                            }
+                                    },
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Checkbox(
+                                    checked = skill in selectedSkills,
+                                    onCheckedChange = { checked ->
+                                        selectedSkills =
+                                            if (checked) {
+                                                selectedSkills + skill
+                                            } else {
+                                                selectedSkills - skill
+                                            }
+                                    },
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = colorResourceCompat(
+                                            R.color.color_primary
+                                        ),
+                                        uncheckedColor = colorResourceCompat(
+                                            R.color.field_border
+                                        ),
+                                        checkmarkColor = colorResourceCompat(
+                                            R.color.checkbox_check
+                                        )
+                                    ),
+                                    modifier = Modifier.size(
+                                        dimensionResource(R.dimen.checkbox_size)
+                                    )
+                                )
+
+                                Text(
+                                    text = skill,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = colorResourceCompat(
+                                        R.color.text_primary
+                                    )
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_large)
+                        )
+                    )
 
