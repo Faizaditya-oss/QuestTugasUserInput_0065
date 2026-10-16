@@ -6,4 +6,6 @@
     <color name="text_primary">#292936</color>
     <color name="text_secondary">#85828C</color>
     <color name="field_border">#777788</color>
+    <color name="button_disabled">#E1E1E3</color>
+    <color name="button_text">#FFFFFF</color>
 </resources>
