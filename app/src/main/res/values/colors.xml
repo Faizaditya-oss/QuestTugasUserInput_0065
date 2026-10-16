@@ -5,4 +5,5 @@
     <color name="card_background">#FFFFFF</color>
     <color name="text_primary">#292936</color>
     <color name="text_secondary">#85828C</color>
+    <color name="field_border">#777788</color>
 </resources>
