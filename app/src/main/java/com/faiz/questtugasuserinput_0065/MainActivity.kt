@@ -277,3 +277,143 @@ fun BiodataScreen() {
                             dimensionResource(R.dimen.space_medium)
                         )
                     )
+                    // Tanggal lahir dan pengalaman
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            dimensionResource(R.dimen.space_small)
+                        )
+                    ) {
+
+                        Box(modifier = Modifier.weight(1f)) {
+
+                            OutlinedTextField(
+                                value = birthDate,
+                                onValueChange = {},
+                                readOnly = true,
+                                placeholder = {
+                                    Text(
+                                        stringResource(R.string.birth_date_hint)
+                                    )
+                                },
+                                trailingIcon = {
+                                    Text(
+                                        text = stringResource(R.string.calendar_icon),
+                                        color = colorResourceCompat(
+                                            R.color.text_primary
+                                        )
+                                    )
+                                },
+                                singleLine = true,
+                                shape = RoundedCornerShape(
+                                    dimensionResource(R.dimen.field_radius)
+                                ),
+                                colors = fieldColors,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(
+                                        dimensionResource(R.dimen.field_height)
+                                    )
+                            )
+
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable {
+                                        val calendar = Calendar.getInstance()
+
+                                        DatePickerDialog(
+                                            context,
+                                            { _, year, month, day ->
+                                                birthDate = String.format(
+                                                    Locale.getDefault(),
+                                                    dateFormat,
+                                                    day,
+                                                    month + 1,
+                                                    year
+                                                )
+                                            },
+                                            calendar.get(Calendar.YEAR),
+                                            calendar.get(Calendar.MONTH),
+                                            calendar.get(Calendar.DAY_OF_MONTH)
+                                        ).show()
+                                    }
+                            )
+                        }
+
+                        Box(modifier = Modifier.weight(1f)) {
+
+                            OutlinedTextField(
+                                value = experience,
+                                onValueChange = {},
+                                readOnly = true,
+                                placeholder = {
+                                    Text(
+                                        stringResource(R.string.experience_hint)
+                                    )
+                                },
+                                trailingIcon = {
+                                    Text(
+                                        text = stringResource(R.string.dropdown_icon),
+                                        color = colorResourceCompat(
+                                            R.color.text_primary
+                                        )
+                                    )
+                                },
+                                singleLine = true,
+                                shape = RoundedCornerShape(
+                                    dimensionResource(R.dimen.field_radius)
+                                ),
+                                colors = fieldColors,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(
+                                        dimensionResource(R.dimen.field_height)
+                                    )
+                            )
+
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable {
+                                        experienceExpanded = true
+                                    }
+                            )
+
+                            DropdownMenu(
+                                expanded = experienceExpanded,
+                                onDismissRequest = {
+                                    experienceExpanded = false
+                                },
+                                modifier = Modifier.background(
+                                    colorResourceCompat(
+                                        R.color.card_background
+                                    )
+                                )
+                            ) {
+                                experienceOptions.forEach { option ->
+                                    DropdownMenuItem(
+                                        text = {
+                                            Text(
+                                                text = option,
+                                                color = colorResourceCompat(
+                                                    R.color.text_primary
+                                                )
+                                            )
+                                        },
+                                        onClick = {
+                                            experience = option
+                                            experienceExpanded = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_medium)
+                        )
+                    )
+
