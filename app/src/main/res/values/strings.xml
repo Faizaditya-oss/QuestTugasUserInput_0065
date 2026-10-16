@@ -20,4 +20,7 @@
     <string name="dropdown_icon">▾</string>
     <string name="background_description">Background dinding bata neon ungu</string>
 
+    <string name="email_invalid">Format email belum valid</string>
+    <string name="form_success">Biodata %1$s %2$s berhasil dikirim.</string>
+    <string name="date_format">%02d/%02d/%04d</string>
 </resources>
