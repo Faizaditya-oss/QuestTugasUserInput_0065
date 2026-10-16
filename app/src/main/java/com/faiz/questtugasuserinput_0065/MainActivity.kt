@@ -492,4 +492,46 @@ fun BiodataScreen() {
                             dimensionResource(R.dimen.space_large)
                         )
                     )
+                    // Tombol hanya aktif jika input valid
+                    Button(
+                        onClick = {
+                            Toast.makeText(
+                                context,
+                                successMessage,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        },
+                        enabled = canProceed,
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResourceCompat(
+                                R.color.color_primary
+                            ),
+                            contentColor = colorResourceCompat(
+                                R.color.button_text
+                            ),
+                            disabledContainerColor = colorResourceCompat(
+                                R.color.button_disabled
+                            ),
+                            disabledContentColor = colorResourceCompat(
+                                R.color.button_text
+                            )
+                        ),
+                        shape = RoundedCornerShape(
+                            dimensionResource(R.dimen.field_radius)
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.button_height))
+                    ) {
+                        Text(
+                            text = stringResource(R.string.proceed),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
 
