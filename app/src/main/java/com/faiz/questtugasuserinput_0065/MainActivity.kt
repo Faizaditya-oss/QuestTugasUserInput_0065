@@ -127,3 +127,64 @@ fun BiodataScreen() {
                     )
                     .align(Alignment.TopCenter)
             )
+            // Kartu biodata mengapung di atas Scaffold
+            Surface(
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .fillMaxWidth()
+                    .padding(
+                        top = dimensionResource(
+                            R.dimen.form_overlap_offset
+                        )
+                    ),
+                shape = RoundedCornerShape(
+                    topStart = dimensionResource(R.dimen.card_radius),
+                    topEnd = dimensionResource(R.dimen.card_radius)
+                ),
+                color = colorResourceCompat(R.color.card_background),
+                shadowElevation = dimensionResource(R.dimen.card_elevation)
+            ) {
+
+                Column(
+                    modifier = Modifier
+                        .heightIn(
+                            max = dimensionResource(R.dimen.form_max_height)
+                        )
+                        .verticalScroll(rememberScrollState())
+                        .padding(
+                            horizontal = dimensionResource(
+                                R.dimen.form_horizontal_padding
+                            )
+                        )
+                        .padding(
+                            top = dimensionResource(R.dimen.form_top_padding),
+                            bottom = dimensionResource(R.dimen.form_bottom_padding)
+                        ),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+
+                    Text(
+                        text = stringResource(R.string.form_title),
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = colorResourceCompat(R.color.color_primary)
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_small)
+                        )
+                    )
+
+                    Text(
+                        text = stringResource(R.string.form_subtitle),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = colorResourceCompat(R.color.text_secondary),
+                        textAlign = TextAlign.Center
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_large)
+                        )
+                    )
