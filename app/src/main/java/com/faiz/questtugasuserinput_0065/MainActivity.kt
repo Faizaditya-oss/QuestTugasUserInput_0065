@@ -188,3 +188,54 @@ fun BiodataScreen() {
                             dimensionResource(R.dimen.space_large)
                         )
                     )
+                    // Nama depan dan nama belakang
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            dimensionResource(R.dimen.space_small)
+                        )
+                    ) {
+                        OutlinedTextField(
+                            value = firstName,
+                            onValueChange = { firstName = it },
+                            placeholder = {
+                                Text(stringResource(R.string.first_name_hint))
+                            },
+                            singleLine = true,
+                            shape = RoundedCornerShape(
+                                dimensionResource(R.dimen.field_radius)
+                            ),
+                            colors = fieldColors,
+                            keyboardOptions = KeyboardOptions(
+                                imeAction = ImeAction.Next
+                            ),
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(dimensionResource(R.dimen.field_height))
+                        )
+
+                        OutlinedTextField(
+                            value = lastName,
+                            onValueChange = { lastName = it },
+                            placeholder = {
+                                Text(stringResource(R.string.last_name_hint))
+                            },
+                            singleLine = true,
+                            shape = RoundedCornerShape(
+                                dimensionResource(R.dimen.field_radius)
+                            ),
+                            colors = fieldColors,
+                            keyboardOptions = KeyboardOptions(
+                                imeAction = ImeAction.Next
+                            ),
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(dimensionResource(R.dimen.field_height))
+                        )
+                    }
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_medium)
+                        )
+                    )
