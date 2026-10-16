@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="background_height">210dp</dimen>
+    <dimen name="form_overlap_offset">190dp</dimen>
+    <dimen name="card_radius">28dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+    <dimen name="form_horizontal_padding">24dp</dimen>
+    <dimen name="form_top_padding">22dp</dimen>
+    <dimen name="form_bottom_padding">24dp</dimen>
+    <dimen name="form_max_height">560dp</dimen>
+
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+
+    <dimen name="field_height">52dp</dimen>
+    <dimen name="field_radius">14dp</dimen>
+    <dimen name="button_height">46dp</dimen>
+    <dimen name="checkbox_size">28dp</dimen>
+</resources>
