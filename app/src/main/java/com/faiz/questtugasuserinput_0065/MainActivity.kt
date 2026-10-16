@@ -239,3 +239,41 @@ fun BiodataScreen() {
                             dimensionResource(R.dimen.space_medium)
                         )
                     )
+                    // Email
+                    OutlinedTextField(
+                        value = email,
+                        onValueChange = { email = it },
+                        placeholder = {
+                            Text(stringResource(R.string.email_hint))
+                        },
+                        singleLine = true,
+                        shape = RoundedCornerShape(
+                            dimensionResource(R.dimen.field_radius)
+                        ),
+                        colors = fieldColors,
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Email,
+                            imeAction = ImeAction.Next
+                        ),
+                        supportingText = {
+                            if (email.isNotBlank() && !emailValid) {
+                                Text(
+                                    text = stringResource(R.string.email_invalid),
+                                    color = colorResourceCompat(
+                                        R.color.text_secondary
+                                    )
+                                )
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(
+                                min = dimensionResource(R.dimen.field_height)
+                            )
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(
+                            dimensionResource(R.dimen.space_medium)
+                        )
+                    )
