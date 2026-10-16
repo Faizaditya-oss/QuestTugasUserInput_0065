@@ -6,4 +6,7 @@
 
     <string name="first_name_hint">Nama Depan</string>
     <string name="last_name_hint">Nama Belakang</string>
+    <string name="email_hint">Email</string>
+    <string name="birth_date_hint">Tgl Lahir</string>
+    <string name="experience_hint">Experience</string>
 </resources>
