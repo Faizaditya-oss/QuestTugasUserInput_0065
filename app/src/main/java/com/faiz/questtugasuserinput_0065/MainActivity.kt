@@ -534,4 +534,9 @@ fun BiodataScreen() {
     }
 }
 
+@Composable
+private fun colorResourceCompat(id: Int): Color {
+    return androidx.compose.ui.res.colorResource(id)
+}
+
 
