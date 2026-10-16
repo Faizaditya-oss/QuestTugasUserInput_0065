@@ -3,4 +3,5 @@
     <color name="color_primary">#713CC8</color>
     <color name="screen_background">#FAF8FF</color>
     <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#292936</color>
 </resources>
